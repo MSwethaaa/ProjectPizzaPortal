@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "OrderCheckout";
+}
+
+<h1>Order Checkout</h1>
+
+<p>Selected Pizza: @Model.Pizza</p>
+
+<form asp-action="OrderConfirmation" asp-controller="Pizza" method="post">
+    <input type="hidden" name="pizzaType" value="@Model.Pizza" />
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" required />
+    <button type="submit">Place Order</button>
+</form>
+

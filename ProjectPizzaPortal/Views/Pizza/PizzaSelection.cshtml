@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjectPizzaPortal.Models.Pizza>
+
+@{
+    ViewData["Title"] = "PizzaSelection";
+}
+
+<h1>PizzaSelection</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PizzaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PizzaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PizzaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PizzaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+                <td>
+                    <a asp-action="OrderCheckout" asp-controller="Pizza" asp-route-pizzaType="@item.PizzaType">Order</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

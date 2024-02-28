@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "OrderConfirmation";
+}
+
+<h1>OrderConfirmation</h1>
+<p>Order ID: @Model.OrderId</p>
+<p>Pizza: @Model.Pizza</p>
+<p>Quantity: @Model.Quantity</p>
+<p>Amount: @Model.Amount</p>
+
+<form asp-action="MakePayment" asp-controller="Pizza">
+    <button type="submit">Make Payment</button>
+</form>
+
+<form asp-action="CancelOrder" asp-controller="Pizza">
+    <button type="submit">Cancel Order</button>
+</form>
+
